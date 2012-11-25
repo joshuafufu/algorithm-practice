@@ -1,3 +1,5 @@
 *.swp
-sort-by-java/.settings/
+.settings/
 *.class
+*.euml2
+.umlproject

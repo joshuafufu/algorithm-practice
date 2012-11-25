@@ -43,8 +43,22 @@ Divide-and-conquer
 
 Merge sort is difficult to run in main memory since two arrays to be sorted need an additional memory. And it also need a temporary array to copy back which may make the sort slow.
 
+Actually, merge sort is always used for external sort.
+
 ## Quick Sort ##
 
 Quick sort is the fastest sort in the know sort algorithm in practice. It's average time complexity is o(NlogN). And the worst would be o(N*N).
 
 However, for a small array which may be less than 20, insertion sort is better than quick sort.
+
+## Bucket Sort ##
+
+Bucket sort is used for sorting a group of small integers.
+
+If the number are all small than M, then the time complexity will be o(N+M).
+
+## External Sort ##
+
+External sort means not to load all the datas into memory when sorting. It is used to handle large piece of datas.
+
+The base thought of external sort is merge sort.

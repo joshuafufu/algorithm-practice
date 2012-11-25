@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>sort-by-java</name>
-	<comment>@key 32303037303533312D313020736F72742D62792D6A6176612F67616F7A686F6E676675 </comment>
+	<name>graph-by-java</name>
+	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
@@ -15,15 +15,9 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
-			<name>com.soyatec.additional.Builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
-		<nature>com.soyatec.additional.Nature</nature>
 	</natures>
 </projectDescription>
