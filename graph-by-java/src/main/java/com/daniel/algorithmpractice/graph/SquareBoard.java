@@ -1,5 +1,7 @@
 package com.daniel.algorithmpractice.graph;
 
+import java.util.List;
+
 public class SquareBoard {
 
     private static final int SQUARE_LENGTH = 21;
@@ -8,7 +10,13 @@ public class SquareBoard {
 
 	Graph graph = initGraph2();
 
-	graph.printPathFromBegin("(" + 2 + "," + 2 + ")");
+	// graph.printPathFromBegin("(" + 2 + "," + 2 + ")");
+
+	List<String> rets = graph.getPathFromBegin("(" + 20 + "," + 20 + ")");
+
+	for (String ret : rets) {
+	    System.out.println(ret);
+	}
     }
 
     private static GraphForShortestPath initGraph() {

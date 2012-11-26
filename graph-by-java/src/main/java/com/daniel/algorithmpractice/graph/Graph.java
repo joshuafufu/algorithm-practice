@@ -1,6 +1,8 @@
 package com.daniel.algorithmpractice.graph;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
@@ -71,6 +73,38 @@ public class Graph {
 	    printStack.pop();
 
 	}
+
+    }
+
+    public List<String> getPathFromBegin(String destName) {
+	Vertex dest = (Vertex) vertexMap.get(destName);
+
+	List<String> rets;
+
+	if (dest == null) {
+	    throw new NoSuchElementException("Destination vertex not found");
+	} else {
+	    rets = getPathByRecursion(dest);
+	}
+
+	return rets;
+    }
+
+    public List<String> getPathByRecursion(Vertex dest) {
+	List<String> current_list = new ArrayList<String>();
+	if (dest.path.isEmpty()) {
+	    current_list.add(dest.name);
+	    return current_list;
+	}
+
+	for (Vertex p : dest.path) {
+	    for (String ret : getPathByRecursion(p)) {
+		ret = ret + "->" + dest.name;
+		current_list.add(ret);
+	    }
+	}
+
+	return current_list;
 
     }
 
