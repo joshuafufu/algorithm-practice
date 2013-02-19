@@ -5,14 +5,25 @@ using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int> &numbers, int target) {
-        // Start typing your C/C++ solution below
-        // DO NOT write int main() function
-        vector<int>::iterator iter = numbers.begin();
-        for (vector<int>::iterator iter = numbers.begin(); iter!=numbers.end(); ++iter)
+        vector<int> v(2);
+        int x=1;
+        for (vector<int>::iterator iter = numbers.begin(); iter!=--numbers.end(); ++iter)
         {
-            cout << *iter << endl;
+            vector<int>::iterator iter2 = iter;
+            iter2++;
+            int y = x+1;
+            for(iter2; iter2!=numbers.end(); ++iter2){
+
+                if(*iter2 + *iter == target) {
+                    v[0]=x;
+                    v[1]=y;
+                    return v;
+                }
+                y++;
+            }
+            x++;
         }
-        vector<int> v;
+
         return v;
     }
 };
@@ -20,9 +31,11 @@ public:
 
 int main() {
     Solution solution;
-    int arr[4] = {1,2,3,4};
-    vector<int> v(arr, arr+4);
-    solution.twoSum(v, 3);
+    int arr[3] = {5,75,25};
+    vector<int> v(arr, arr+3);
+    vector<int> result = solution.twoSum(v, 100);
     
+    cout<<result[0]<<endl;
+    cout<<result[1]<<endl;
     return 0;
 }
