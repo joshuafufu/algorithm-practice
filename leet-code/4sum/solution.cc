@@ -18,7 +18,6 @@ public:
         
         int k=0;
         int l=0;
-        int j=0;
 
         int a=0;
         int b=0;
@@ -27,14 +26,17 @@ public:
 
         for (int i = 0; i <= len-4; ++i)
         {
-            a=num[i];
-            k=i+1;
-            l=len-1;
-            while(k<l) {
-                b=num[k];
-                c=num[l];
-                for(j=k+1; j<l; j++) {
-                    d=num[j];
+            for ( int j = i+1; j <= len-3; ++j)
+            {
+                a=num[i];   
+                k=j+1;
+                l=len-1;
+
+                while(k<l) {
+                    b=num[j];
+                    c=num[k];
+                    d=num[l];
+
                     if(a+b+c+d==target){
                         vector<int> x;
                         x.push_back(a);
@@ -48,17 +50,19 @@ public:
                         if (ret == output.end()) {
                             output.push_back(x);
                         }
-
+                        
                         l--;
                         k++;
-                    }else if (a + b +c>target){
+
+                    } else if ( a+b+c+d > target) {
                         l--;
-                    }else{
+                    } else {
                         k++;
                     }
+
                 }
             }
-
+            
         }
         return output;
     }
